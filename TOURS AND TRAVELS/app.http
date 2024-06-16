@@ -1,0 +1,101 @@
+//Register a user
+POST http://localhost:5000/users/register
+Content-Type: application/json
+
+{
+    "name":"Sals",
+    "email":"gitongasally4@gmail.com",
+    "password":"Qwerty@401"
+}
+
+####
+//Get all users
+GET http://localhost:5000/users
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg1NDk4MjcsImV4cCI6MTcxODU1NzAyN30.kGqMnfKHikCfxLqnUIAP3kbvm69kQDyId6x3gLGZpmo
+
+
+####
+//Get user by id
+GET http://localhost:5000/users/19c9bfc3-3a67-4013-8141-3992be940b3e
+
+
+####
+//User Login
+POST http://localhost:5000/users/login
+Content-Type: application/json
+
+{
+"email":"silviamutoni@gmail.com",
+"password":"Qwerty@401"
+}
+
+
+
+
+####
+//Update a user
+PUT http://localhost:5000/users/6f92d590-3766-43d9-96c3-4a8a277a8d45
+Content-Type: application/json
+
+{
+    "name":"Eddy Mulili",
+    "email":"mulandiedwin@gmail.com",
+    "password":"Qwerty@401"
+}
+
+
+####
+//Delete a user by admin
+DELETE http://localhost:5000/users/6f92d590-3766-43d9-96c3-4a8a277a8d45
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg1NDg0NDAsImV4cCI6MTcxODU1NTY0MH0.EAy0T6T74Q9rlbMU40Gi4lridQFiZStnMBXjXZNPlc4
+
+
+
+
+
+
+
+//Tours
+####
+//Get all Tours by users
+GET http://localhost:5000/tours
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjcxOTIxZS00ZDU2LTQyNzctODUyNC1iMGE3ZmE3NDUzNmIiLCJuYW1lIjoiU2lsdmlhIE11dGhvbmkiLCJyb2xlX2lkIjoxLCJpYXQiOjE3MTg1NTc2MTEsImV4cCI6MTcxODU2NDgxMX0.46XZ2t3pE7713i2oyOobbdCsOx4zfeKA5KSNds6UtgY
+
+
+####
+//Get tour by id by admin
+GET http://localhost:5000/tours/0584ad21-016f-45b3-9779-d00e5495326d
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg1NTU4MTksImV4cCI6MTcxODU2MzAxOX0.ei0pydV5D92wIz7wmlDekytrdvT0QvGWVdk6e_JEeUI
+
+
+####
+//Add Tour by admin
+POST http://localhost:5000/tours
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg1NTU4MTksImV4cCI6MTcxODU2MzAxOX0.ei0pydV5D92wIz7wmlDekytrdvT0QvGWVdk6e_JEeUI
+Content-Type: application/json
+
+{
+    "name":"Pwani Executive",
+    "destination":"Mombasa",
+    "description":"Beach Safari",
+    "price":9500
+}
+
+
+####
+//Update tour by admin
+PUT http://localhost:5000/tours/34d458b0-d3a8-42f7-abe3-c3bd35fc9fed
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg1NTU4MTksImV4cCI6MTcxODU2MzAxOX0.ei0pydV5D92wIz7wmlDekytrdvT0QvGWVdk6e_JEeUI
+Content-Type: application/json
+
+{
+    "name":"Pwani Executive",
+    "destination":"Mombasa",
+    "description":"Beach Safari",
+    "price":9500
+}
+
+####
+//Delete a tour by admin
+DELETE http://localhost:5000/tours/d23c1de6-49c0-4777-a9e1-45497c922d89
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg1NTU4MTksImV4cCI6MTcxODU2MzAxOX0.ei0pydV5D92wIz7wmlDekytrdvT0QvGWVdk6e_JEeUI
