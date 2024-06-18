@@ -2,9 +2,11 @@ USE Tours;
 CREATE TABLE Bookings
 (
     id VARCHAR(255) PRIMARY KEY,
-    location VARCHAR(255) NOT NULL,
-    starRating VARCHAR(255) NOT NULL,
-    user_id VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Users(id),
-
+    user_id VARCHAR(255),
+    tour_id VARCHAR(255),
+    hotel_id VARCHAR(255),
+    date DATETIME2
+        FOREIGN KEY (user_id) REFERENCES Users(id),
+    FOREIGN KEY (tour_id) REFERENCES Tours(id),
+    FOREIGN KEY (hotel_id) REFERENCES Hotels(id),
 );

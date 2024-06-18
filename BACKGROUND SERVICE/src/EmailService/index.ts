@@ -1,6 +1,7 @@
 import { DBHelper } from "../DBHelpers"
 import ejs from 'ejs'
 import { sendEmail } from "../Helpers";
+import { Request, Response } from "express"
 
 
 const dbInstance = new DBHelper
@@ -12,6 +13,13 @@ export interface User {
     password: string,
     isDeleted: number,
     isEmailSent: number
+}
+export interface Bookings {
+    id: string,
+    user_id: string,
+    tour_id: string,
+    hotel_id: string,
+    date: string
 }
 
 export async function run() {
@@ -34,6 +42,7 @@ export async function run() {
             })
         })
     } catch (error) {
-        // return res.status(500).json(error)
+
     }
 }
+

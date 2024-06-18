@@ -45,9 +45,16 @@ export async function updateUser(req: Request<{ id: string }>, res: Response) {
 export async function deleteUser(req: Request<{ id: string }>, res: Response) {
     try {
         console.log('here')
-        await dbInstance.execute('deleteUser', { id: req.params.id })
 
-        return res.status(200).json({ message: "User Deleted Successfully" })
+        const user = (await dbInstance.execute('getUserId', { id: req.params.id })).recordset[0] as User
+        if (user && user.id) {
+            await dbInstance.execute('deleteUser', { id: req.params.id })
+            return res.status(200).json({ message: "User Deleted Successfully" })
+        }
+        
+        return res.status(404).json({ message: "User Not Found" })
+
+
     } catch (error) {
         return res.status(500).json(error)
     }

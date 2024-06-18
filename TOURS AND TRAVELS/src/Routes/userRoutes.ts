@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { deleteUser, getUserById, getUsers, updateUser } from "../Controller/usersController";
-import { verifyAdmin } from "../Middleware";
+import { checkPermission, verifyAdmin } from "../Middleware";
 import { log } from "console";
 
 
@@ -14,7 +14,7 @@ userRoutes.get('', verifyAdmin, getUsers)
 userRoutes.delete('/:id', verifyAdmin, deleteUser)
 
 //update a user but not by admin
-userRoutes.put('/:id', updateUser)
+userRoutes.put('/:id', checkPermission,updateUser)
 
 //get user by id
 userRoutes.get('/:id', getUserById)

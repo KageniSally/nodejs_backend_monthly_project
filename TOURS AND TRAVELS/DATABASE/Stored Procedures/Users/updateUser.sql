@@ -5,5 +5,5 @@ CREATE OR ALTER PROCEDURE updateUser(@id VARCHAR(255),
 AS
 BEGIN
     UPDATE Users SET email=@email,name=@name,password=@password
-WHERE id=@id
+WHERE id=@id AND isDeleted=0
 END

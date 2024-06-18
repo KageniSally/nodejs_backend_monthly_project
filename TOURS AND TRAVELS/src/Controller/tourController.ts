@@ -1,4 +1,4 @@
-import { Request, Response, response } from "express"
+import { Request, Response } from "express"
 import { DBHelper } from "../DBHelpers"
 import { Tour } from '../Models/toursModel'
 import { v4 as uid } from 'uuid'
@@ -66,10 +66,18 @@ export async function updateTour(req: Request, res: Response) {
     }
 }
 
-export async function deleteTour(req:Request<{id:string}>,res:Response){
+export async function deleteTour(req: Request<{ id: string }>, res: Response) {
     try {
-        dbInstance.execute('deleteTour',{id:req.params.id})
-    return res.status(200).json({message:"Tour Deleted Successfully"})
+        const tour = (await dbInstance.execute('getTourId', { id: req.params.id })).recordset[0] as Tour
+
+        if (tour && tour.id) {
+            await dbInstance.execute('deleteTour', { id: req.params.id })
+            return res.status(200).json({ message: "Tour Deleted Successfully" })
+        }
+
+        return res.status(404).json({ message: "Tour Not Found" })
+
+
     } catch (error) {
         return res.status(500).json(error)
     }
