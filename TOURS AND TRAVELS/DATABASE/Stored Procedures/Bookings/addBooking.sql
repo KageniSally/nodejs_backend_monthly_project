@@ -7,5 +7,6 @@ CREATE OR ALTER PROCEDURE addBooking(
 )
 AS
 BEGIN
-INSERT INTO Bookings VALUES(@id,@user_id,@tour_id,@hotel_id,@date)
+INSERT INTO Bookings (id,user_id,tour_id,hotel_id,date)
+VALUES(@id,@user_id,@tour_id,@hotel_id,@date)
 END

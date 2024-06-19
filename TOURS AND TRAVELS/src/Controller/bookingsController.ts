@@ -12,9 +12,9 @@ export async function addBooking(req: Request, res: Response) {
         const id = uid()
 
         //other
-        const { user_id, tour_id, hotel_id, date } = req.body
+        const { user_id, tour_id, hotel_id, date, isEmailSent } = req.body
         dbInstance.execute('addBooking', {
-            id, user_id, tour_id, hotel_id, date
+            id, user_id, tour_id, hotel_id, date, isEmailSent
         })
         return res.status(201).json({ message: 'Booking created successfully' })
     } catch (error) {

@@ -20,5 +20,5 @@ app.use('/bookings', bookingRoutes)
 console.log("server")
 //Port
 app.listen(5000, () => {
-    console.log("server running................")
+    console.log("server running....................")
 })

@@ -25,7 +25,7 @@ POST http://localhost:5000/users/login
 Content-Type: application/json
 
 {
-"email":"silviamutoni@gmail.com",
+"email":"mulandiedwin@gmail.com",
 "password":"Qwerty@401"
 }
 
@@ -58,9 +58,8 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtO
 //Tours
 ####
 //Get all Tours by users
-GET http://localhost:5000/tours
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjcxOTIxZS00ZDU2LTQyNzctODUyNC1iMGE3ZmE3NDUzNmIiLCJuYW1lIjoiU2lsdmlhIE11dGhvbmkiLCJyb2xlX2lkIjoxLCJpYXQiOjE3MTg1NTc2MTEsImV4cCI6MTcxODU2NDgxMX0.46XZ2t3pE7713i2oyOobbdCsOx4zfeKA5KSNds6UtgY
-
+GET http://localhost:5000/bookings
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOTAzMGI5ZS05ZDUyLTRhZDUtOTBkNy0zZThhMDZjMjU1NWIiLCJuYW1lIjoiU2FsbHkgQWRtaW4iLCJyb2xlX2lkIjoyLCJpYXQiOjE3MTg3ODc1MDYsImV4cCI6MTcxODc5NDcwNn0.oE2Q4klwo_r941Lr9-_yvCdci5faWh2r4ZH0e119IIo
 
 ####
 //Get tour by id by admin

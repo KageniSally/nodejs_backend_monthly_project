@@ -3,5 +3,6 @@ export interface Bookings {
     user_id: string,
     tour_id: string,
     hotel_id: string,
+    isEmailSent:number,
     date: string
 }
